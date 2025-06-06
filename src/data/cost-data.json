@@ -1,0 +1,122 @@
+{
+  "lastUpdated": "2025-06-06",
+  "nationalStats": {
+  "minimumWageIncreaseRate": {
+  "value": 5.1,
+  "unit": "%",
+  "note": "全国加重平均 上昇率（令和6年度改定）",
+  "source": {
+  "name": "厚生労働省 令和6年度地域別最低賃金改定状況",
+  "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/index.html"
+  }
+  },
+  "consumerPriceIndex": {
+  "value": 3.6,
+  "unit": "%",
+  "comparisonPeriod": "前年同月比（総合）",
+  "source": {
+  "name": "総務省統計局 2025年4月分",
+  "url": "https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html"
+  }
+  }
+  },
+  "industryData": {
+  "construction": {
+  "averageWageIncreaseRate": {
+  "value": 4.85,
+  "unit": "%",
+  "source": {
+  "name": "日本経済新聞 2025年5月20日報（春闘集計）",
+  "url": "https://www.nikkei.com/"
+  }
+  },
+  "materialCosts": [
+  {
+  "materialName": "木材・木製品",
+  "priceTrend": {
+  "value": "前年同月比 +5.8%",
+  "source": {
+  "name": "日本銀行「2025年5月企業物価指数」",
+  "url": "https://www.boj.or.jp/statistics/pi/cgpi_2020/index.htm"
+  }
+  },
+  "marketSummary": "日銀の企業物価指数が示す通り、木材価格は前年比で上昇傾向が続いています。国内の省エネ基準義務化に伴う需要に加え、円安による輸入コストの上昇が国内価格を押し上げる要因となっています。今後の国際情勢や為替の動向には引き続き注意が必要です。"
+  },
+  {
+  "materialName": "鉄鋼",
+  "priceTrend": {
+  "value": "前年同月比 +2.3%",
+  "source": {
+  "name": "日本銀行「2025年5月企業物価指数」",
+  "url": "https://www.boj.or.jp/statistics/pi/cgpi_2020/index.htm"
+  }
+  },
+  "marketSummary": "日銀の企業物価指数では鉄鋼価格も前年比で上昇しています。原料・エネルギーコストは高止まりしており、メーカーの採算は依然として厳しい状況です。国内需要は落ち着いていますが、海外市場の動向や円安が国内価格を下支えしています。"
+  },
+  {
+  "materialName": "化学製品",
+  "priceTrend": {
+  "value": "前年同月比 +3.1%",
+  "source": {
+  "name": "日本銀行「2025年5月企業物価指数」",
+  "url": "https://www.boj.or.jp/statistics/pi/cgpi_2020/index.htm"
+  }
+  },
+  "marketSummary": "日銀の指数が示す通り、化学製品も前年比で価格が上昇しています。原油価格の動向に大きく影響される国産ナフサ価格が高止まりしていることに加え、円安が輸入原料のコストを押し上げています。建設分野で広く使われる塗料や接着剤、断熱材などの価格にも影響が及んでいます。"
+  }
+  ]
+  }
+  },
+  "minimumWagesByPrefecture": [
+  { "prefectureCode": "01", "prefectureName": "北海道", "wage": 960 },
+  { "prefectureCode": "02", "prefectureName": "青森", "wage": 898 },
+  { "prefectureCode": "03", "prefectureName": "岩手", "wage": 893 },
+  { "prefectureCode": "04", "prefectureName": "宮城", "wage": 923 },
+  { "prefectureCode": "05", "prefectureName": "秋田", "wage": 897 },
+  { "prefectureCode": "06", "prefectureName": "山形", "wage": 900 },
+  { "prefectureCode": "07", "prefectureName": "福島", "wage": 900 },
+  { "prefectureCode": "08", "prefectureName": "茨城", "wage": 953 },
+  { "prefectureCode": "09", "prefectureName": "栃木", "wage": 954 },
+  { "prefectureCode": "10", "prefectureName": "群馬", "wage": 935 },
+  { "prefectureCode": "11", "prefectureName": "埼玉", "wage": 1028 },
+  { "prefectureCode": "12", "prefectureName": "千葉", "wage": 1026 },
+  { "prefectureCode": "13", "prefectureName": "東京", "wage": 1113 },
+  { "prefectureCode": "14", "prefectureName": "神奈川", "wage": 1112 },
+  { "prefectureCode": "15", "prefectureName": "新潟", "wage": 931 },
+  { "prefectureCode": "16", "prefectureName": "富山", "wage": 948 },
+  { "prefectureCode": "17", "prefectureName": "石川", "wage": 933 },
+  { "prefectureCode": "18", "prefectureName": "福井", "wage": 931 },
+  { "prefectureCode": "19", "prefectureName": "山梨", "wage": 938 },
+  { "prefectureCode": "20", "prefectureName": "長野", "wage": 948 },
+  { "prefectureCode": "21", "prefectureName": "岐阜", "wage": 950 },
+  { "prefectureCode": "22", "prefectureName": "静岡", "wage": 984 },
+  { "prefectureCode": "23", "prefectureName": "愛知", "wage": 1027 },
+  { "prefectureCode": "24", "prefectureName": "三重", "wage": 1002 },
+  { "prefectureCode": "25", "prefectureName": "滋賀", "wage": 967 },
+  { "prefectureCode": "26", "prefectureName": "京都", "wage": 1008 },
+  { "prefectureCode": "27", "prefectureName": "大阪", "wage": 1064 },
+  { "prefectureCode": "28", "prefectureName": "兵庫", "wage": 1001 },
+  { "prefectureCode": "29", "prefectureName": "奈良", "wage": 936 },
+  { "prefectureCode": "30", "prefectureName": "和歌山", "wage": 929 },
+  { "prefectureCode": "31", "prefectureName": "鳥取", "wage": 900 },
+  { "prefectureCode": "32", "prefectureName": "島根", "wage": 904 },
+  { "prefectureCode": "33", "prefectureName": "岡山", "wage": 932 },
+  { "prefectureCode": "34", "prefectureName": "広島", "wage": 970 },
+  { "prefectureCode": "35", "prefectureName": "山口", "wage": 928 },
+  { "prefectureCode": "36", "prefectureName": "徳島", "wage": 896 },
+  { "prefectureCode": "37", "prefectureName": "香川", "wage": 918 },
+  { "prefectureCode": "38", "prefectureName": "愛媛", "wage": 897 },
+  { "prefectureCode": "39", "prefectureName": "高知", "wage": 897 },
+  { "prefectureCode": "40", "prefectureName": "福岡", "wage": 941 },
+  { "prefectureCode": "41", "prefectureName": "佐賀", "wage": 900 },
+  { "prefectureCode": "42", "prefectureName": "長崎", "wage": 898 },
+  { "prefectureCode": "43", "prefectureName": "熊本", "wage": 898 },
+  { "prefectureCode": "44", "prefectureName": "大分", "wage": 899 },
+  { "prefectureCode": "45", "prefectureName": "宮崎", "wage": 897 },
+  { "prefectureCode": "46", "prefectureName": "鹿児島", "wage": 897 },
+  { "prefectureCode": "47", "prefectureName": "沖縄", "wage": 896 }
+  ],
+  "commentTemplates": {
+  "construction_default": "昨今の経済状況を鑑み、ご相談がございます。ご高承の通り、全国の最低賃金は前年度から{nationalStats.minimumWageIncreaseRate.value}%上昇し、当社のございます{selectedPrefecture.prefectureName}県の最低賃金も{selectedPrefecture.wage}円となっております。また、建設業界におきましても平均{industryData.construction.averageWageIncreaseRate.value}%の賃上げが行われ、消費者物価指数も{nationalStats.consumerPriceIndex.value}%（{nationalStats.consumerPriceIndex.comparisonPeriod}）上昇しております。加えて、主要資材である{industryData.construction.materialCosts[0].materialName}の価格は{industryData.construction.materialCosts[0].priceTrend.value}、{industryData.construction.materialCosts[1].materialName}は{industryData.construction.materialCosts[1].priceTrend.value}、{industryData.construction.materialCosts[2].materialName}も{industryData.construction.materialCosts[2].priceTrend.value}と、軒並み高騰が続いております。つきましては、誠に恐縮ではございますが、これらの労務費及び資材費の高騰分を鑑み、工事費に関して{targetIncreaseRate}%の価格転嫁をお願い申し上げたく存じます。"
+  }
+  }
