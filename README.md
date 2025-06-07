@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 建設業コストアップ交渉ブースター (Koushou Booster)
 
-## Getting Started
+![アプリのスクリーンショット]
+<img width="737" alt="スクリーンショット 2025-06-07 13 36 28" src="https://github.com/user-attachments/assets/7c52c8dd-c731-47cf-ad64-eea8fcb8bacb" />
+<img width="756" alt="スクリーンショット 2025-06-07 13 36 50" src="https://github.com/user-attachments/assets/b6a299f5-4bd1-4b26-9f4a-c1a798b5e723" />
+<img width="721" alt="スクリーンショット 2025-06-07 13 37 36" src="https://github.com/user-attachments/assets/fbfb071c-fff8-44b5-be00-64c506bb5855" />
 
-First, run the development server:
+
+
+
+**客観的データを武器に、あなたの価格交渉をサポートします。**
+
+これは、コスト上昇に悩む中小建設業の経営者や担当者が、自信を持って価格転嫁交渉に臨むための「勇気」と「武器」を提供するWebアプリケーションです。
+
+デプロイ先URL:　　https://koushou-booster.vercel.app
+
+---
+
+## 💡 コンセプト
+
+昨今、政府は労務費の適切な価格転嫁を推進していますが、現場では依然として「取引先との関係性」や「客観的根拠の不足」から、多くの中小企業が価格転嫁に踏み出せずにいます。特に建設業界では、労務費だけでなく、ウッドショックやアイアンショックに代表される急激な資材費の高騰が経営を圧迫しています。
+
+このアプリケーションは、そんな**「コストは上がっているのに、どう交渉していいか分からない」**という事業者の悩みに寄り添うために開発されました。
+
+信頼性の高い公的データをワンクリックで提示し、交渉の「たたき台」となる参考転嫁率やコメントテンプレートを自動生成することで、**交渉への心理的ハードルを下げ、自信を持って交渉のテーブルについてもらうこと**を目的としています。
+
+このプロジェクトは、AIアシスタント(Gemini)とのペア開発というスタイルで、**わずか3日間**でアイデア出しからプロトタイピング、そして本番デプロイまでを完遂した、アジャイル開発の実践例でもあります。
+
+## ✨ 主な機能
+
+* **ワンクリック・データ表示:**
+    都道府県を選択するだけで、交渉に必要な以下の客観的データを一括で表示します。
+    * **労務費関連:**
+        * 選択都道府県の最新の最低賃金
+        * 建設業界の平均賃上げ率（春闘ベース）
+        * 全国の消費者物価指数（CPI）
+    * **主要資材費関連:**
+        * 木材・木製品の価格動向（日銀 企業物価指数）
+        * 鉄鋼の価格動向（日銀 企業物価指数）
+        * 化学製品の価格動向（日銀 企業物価指数）
+
+* **参考転嫁率の自動算出:**
+    表示された各種コスト上昇指標を元に、価格転嫁率の「目安」を自動で計算・提示します。これにより、「いくら値上げを要求すべきか」という目標設定をサポートします。
+
+* **交渉コメントテンプレートの自動生成:**
+    全ての客観的データと、ユーザーが設定した目標転嫁率を盛り込んだ、実践的な交渉コメントのたたき台を自動で生成します。コピーしてすぐにメールや資料作成に活用できます。
+
+## 🛠️ 技術スタック
+
+* **フロントエンド:** Next.js (App Router), React, TypeScript
+* **UI:** Tailwind CSS, shadcn/ui
+* **データソース:** 日本銀行、厚生労働省、総務省統計局などの公的統計データを手動でJSON化
+* **デプロイ:** Vercel
+* **開発パートナー:** Gemini (AI Assistant) & Cursor (AI Editor)
+
+## 🚀 ローカルでの実行方法
 
 ```bash
+# 1. リポジトリをクローン
+git clone [https://github.com/](https://github.com/)[あなたのGitHubユーザー名]/koushou-booster.git
+
+# 2. プロジェクトディレクトリに移動
+cd koushou-booster
+
+# 3. 依存パッケージをインストール
+npm install
+
+# 4. 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
