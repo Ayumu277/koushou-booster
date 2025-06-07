@@ -1,6 +1,5 @@
 # 建設業コストアップ交渉ブースター (Koushou Booster)
 
-![アプリのスクリーンショット]
 <img width="737" alt="スクリーンショット 2025-06-07 13 36 28" src="https://github.com/user-attachments/assets/7c52c8dd-c731-47cf-ad64-eea8fcb8bacb" />
 <img width="756" alt="スクリーンショット 2025-06-07 13 36 50" src="https://github.com/user-attachments/assets/b6a299f5-4bd1-4b26-9f4a-c1a798b5e723" />
 <img width="721" alt="スクリーンショット 2025-06-07 13 37 36" src="https://github.com/user-attachments/assets/fbfb071c-fff8-44b5-be00-64c506bb5855" />
