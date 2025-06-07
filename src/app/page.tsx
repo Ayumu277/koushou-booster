@@ -8,7 +8,32 @@ import { ResultDisplay } from '@/components/ResultDisplay';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from '@/components/ui/label';
 
-export type ResultDataType = any; // MVPなのでanyで簡略化
+// --- ここからが厳密な型定義です！ ---
+type Prefecture = typeof costData.minimumWagesByPrefecture[0];
+
+type MaterialCost = typeof costData.industryData.construction.materialCosts[0];
+
+export type CalculationDataType = {
+  selectedPrefecture: {
+    prefectureName: string;
+    wage: number;
+  };
+  nationalStats: typeof costData.nationalStats;
+  industryData: {
+    construction: {
+      averageWageIncreaseRate: typeof costData.industryData.construction.averageWageIncreaseRate;
+      materialCosts: MaterialCost[];
+    }
+  };
+} | null;
+
+export type ResultDataType = {
+  calculationData: CalculationDataType;
+  referenceRate: number | null;
+  targetIncreaseRate: string;
+  generatedComment: string;
+} | null;
+// --- ここまで ---
 
 export default function Home() {
   const prefectures = costData.minimumWagesByPrefecture;
@@ -17,30 +42,25 @@ export default function Home() {
   const [targetIncreaseRate, setTargetIncreaseRate] = useState<string>('');
   const [referenceRate, setReferenceRate] = useState<number | null>(null);
   const [generatedComment, setGeneratedComment] = useState<string>('');
-  const [calculationData, setCalculationData] = useState<any>(null);
+  const [calculationData, setCalculationData] = useState<CalculationDataType>(null); // anyを修正
 
   const handlePrefectureChange = (code: string) => {
     setSelectedPrefectureCode(code);
     setGeneratedComment('');
 
     const selectedPrefecture = prefectures.find(p => p.prefectureCode === code);
-    if (!selectedPrefecture || !selectedPrefecture.previousWage) return; // previousWageがない場合は計算しない
+    if (!selectedPrefecture || !selectedPrefecture.previousWage) return;
 
-    // --- ここからが最終進化ポイント！ ---
-    // 1. 都道府県別の最低賃金上昇率を計算
     const prefectureIncreaseRate = ((selectedPrefecture.wage - selectedPrefecture.previousWage) / selectedPrefecture.previousWage) * 100;
 
-    // 2. 参考転嫁率の計算に、全国平均の代わりに「都道府県別の上昇率」を使う
     const rates = [
-      prefectureIncreaseRate, // ★★★ここが、全国一律のデータから、今計算した地域ごとのデータに進化した！★★★
+      prefectureIncreaseRate,
       costData.industryData.construction.averageWageIncreaseRate.value,
       costData.nationalStats.consumerPriceIndex.value,
       ...costData.industryData.construction.materialCosts.map(material =>
         parseFloat(material.priceTrend.value.replace(/[^0-9.]/g, ''))
       )
     ];
-    // --- ここまで ---
-
     const averageRate = rates.reduce((sum, rate) => sum + rate, 0) / rates.length;
     const roundedRate = Math.round(averageRate * 10) / 10;
 
@@ -57,14 +77,12 @@ export default function Home() {
     });
   };
 
-  // --- 交渉コメントを生成する処理（完全版） ---
   const handleGenerateComment = () => {
     if (!calculationData) return;
 
     let commentTemplate = costData.commentTemplates.construction_default;
     const { selectedPrefecture, nationalStats, industryData } = calculationData;
 
-    // --- ここが置換ロジックの完全版です！ ---
     const replacements = {
       '{nationalStats.minimumWageIncreaseRate.value}': nationalStats.minimumWageIncreaseRate.value,
       '{selectedPrefecture.prefectureName}': selectedPrefecture.prefectureName,
@@ -80,7 +98,6 @@ export default function Home() {
       '{industryData.construction.materialCosts[2].priceTrend.value}': industryData.construction.materialCosts[2].priceTrend.value,
       '{targetIncreaseRate}': targetIncreaseRate || '〇',
     };
-    // --- ここまで ---
 
     for (const [key, value] of Object.entries(replacements)) {
       commentTemplate = commentTemplate.replaceAll(key, String(value));
@@ -103,7 +120,7 @@ export default function Home() {
               <SelectValue placeholder="都道府県を選択..." />
             </SelectTrigger>
             <SelectContent>
-              {prefectures.map((pref) => (
+              {prefectures.map((pref: Prefecture) => (
                 <SelectItem key={pref.prefectureCode} value={pref.prefectureCode}>
                   {pref.prefectureName}
                 </SelectItem>

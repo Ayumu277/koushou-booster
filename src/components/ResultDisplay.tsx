@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ResultDataType } from "@/app/page";
+import { CalculationDataType } from "@/app/page"; // page.tsxから型定義をインポート
 
+// propsの型を定義
 type ResultDisplayProps = {
-  calculationData: any;
+  calculationData: CalculationDataType; // anyを修正
   referenceRate: number | null;
   targetIncreaseRate: string;
   generatedComment: string;
@@ -38,7 +39,7 @@ export function ResultDisplay({
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* --- 労務費関連セクション（完全版） --- */}
+          {/* --- 労務費関連セクション --- */}
           <div>
             <h3 className="text-lg font-semibold mb-2 border-b pb-1">労務費関連</h3>
             <div className="space-y-2 text-sm">
@@ -49,11 +50,11 @@ export function ResultDisplay({
             </div>
           </div>
 
-          {/* --- 主要資材費関連セクション（完全版） --- */}
+          {/* --- 主要資材費関連セクション --- */}
           <div>
             <h3 className="text-lg font-semibold mb-2 border-b pb-1">主要資材費関連（建設業）</h3>
             <div className="space-y-4 text-sm">
-              {industryData.construction.materialCosts.map((material: any, index: number) => (
+              {industryData.construction.materialCosts.map((material, index) => ( // anyを削除
                 <div key={index}>
                   <p>・<strong>{material.materialName}価格の動向:</strong> {material.priceTrend.value} ( <a href={material.priceTrend.source.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{material.priceTrend.source.name}</a> )</p>
                   <p className="pl-4 text-slate-600">→ {material.marketSummary}</p>
